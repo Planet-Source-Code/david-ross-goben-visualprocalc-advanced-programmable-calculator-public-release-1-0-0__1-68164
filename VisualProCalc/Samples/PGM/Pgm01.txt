@@ -1,0 +1,51 @@
+'Hi-Lo Game
+'----------
+Ukey "A" Lbl "Init Seed" , "Step 1: Seed for Random # generator" {
+  Rnd#
+  Tvar 1
+  CLR
+  "Seed Stored"
+  Adv
+  0
+  }
+ 
+Ukey "B" Lbl "New Game" , "Step 2: Generate # from 0 to 1023" {
+  ClrVar All
+  Rnd x 1024 = Int
+  X><T
+  "Secret # Generated"
+  Adv
+  0
+  }
+ 
+Ukey "C" Lbl "Guess" , "Step 3 and repeat: Enter your guess" {
+  STO 3
+  Incr 2;
+  X==T {
+    "You win with " STO 1;
+    RCL 2 SUM 1;
+    " guesses!" SUM 1;
+    RCL 1
+    Adv
+    RCL 3
+    Rtn
+    }
+  X<T {
+    "You guessed LOW at "
+    }
+  Else {
+    "You guessed HIGH at "
+    }
+  STO 1;
+  RCL 3 SUM 1;
+  RCL 1
+  Adv;
+  RCL 3
+  }
+ 
+Sbr "Main" {
+  CLR
+  "Welcome to Hi-Lo"
+  Adv
+  0
+  }

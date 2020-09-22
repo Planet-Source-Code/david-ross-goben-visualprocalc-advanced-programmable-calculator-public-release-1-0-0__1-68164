@@ -1,0 +1,6 @@
+'Simple Array Test
+Tvar 01 Lbl "Test"[99][99];
+"This is a test" STO "Test"[99][99];
+CLR;
+RCL "Test"[99][99]
+R/S

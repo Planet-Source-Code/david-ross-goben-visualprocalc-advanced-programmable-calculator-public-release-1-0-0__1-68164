@@ -1,0 +1,19 @@
+'Hello, World!
+Dfn Ukey "A" Lbl "Test" {
+  "Hello, World!" STO "TEST"
+  CLR
+  <Ukey_B>
+  }
+ 
+Dfn Ukey "B" Lbl "RCL" {
+  RCL "TEST"
+  }
+ 
+Dfn
+Ukey "Z" Lbl "Init" , "Initialize variables" {
+  CMs
+  CLR
+  Tvar 0 Lbl "TEST"[5][10]
+  Nvar 1 Lbl "CAT"
+  Ivar 2
+  }

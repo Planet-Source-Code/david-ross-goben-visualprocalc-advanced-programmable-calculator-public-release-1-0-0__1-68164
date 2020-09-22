@@ -1,0 +1,9 @@
+'Null Test
+Ukey "A" Lbl "TEST" {
+  CP X!=T {
+    1/X
+    }
+  Else {
+    "Cannot use null value!"
+    }
+  }

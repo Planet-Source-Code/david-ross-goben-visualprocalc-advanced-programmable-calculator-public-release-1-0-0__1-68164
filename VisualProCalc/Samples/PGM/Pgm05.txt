@@ -1,0 +1,53 @@
+'Biorhythms
+Ukey "A" Lbl "Biorhythms" , "Compute this month's Biorhythms" {
+  CMs
+  Deg
+  CLR
+  "Biorhythms" OP 0 OP 9 OP 10
+  Adv
+  " "
+  Adv
+  Pmt "Enter date of birth(MM/DD/YYYY)"
+  Val STO 1;
+  OP 49 Int
+  Push - OP 58 STO 4 + 1 = STO 02;
+  "mmmm yyyy" OP 48
+  Pop OP 50 OP 9;
+  "-" OP 26;
+  3 OP 28;
+  "+" OP 26;
+  35 OP 28;
+  " "
+  Adv
+  OP 10
+  Adv
+  1 STO 5
+  Fmt "00"
+  While (Var 4 != 0) {
+    OP 0;
+    RCL 5 OP 7;
+    "|" OP 26;
+    19 OP 28;
+    "P" OP 26;
+    23
+    Call "Calc";
+    "E" OP 26;
+    28
+    Call "Calc";
+    "I" OP 26;
+    33
+    Call "Calc";
+    OP 10
+    Adv
+    Incr 2
+    Incr 5
+    Decr 4
+    }
+  !Fix
+  0
+  }
+ 
+Sbr "Calc" {
+  (1/X x(RCL 2 - RCL 1) x 360) Sin x
+  15 = Int + 18 = OP 28
+  }

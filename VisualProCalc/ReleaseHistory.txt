@@ -1,0 +1,113 @@
+VisualProCalc Personal Programmable Calculator Release History
+--------------------------------------------------------------
+March 18, 2007 -- Public Release of Beta 0.2.0.
+March 19, 2007 -- 0.2.1.
+                  * Fixed minor bug in pending ops for Trig
+                    functions Sin, Cos,Tan,Sec,Csc,Cot when no
+                    pending Arc or Hyp. They were being pushed
+                    on the pend stack anyway. Oops. After 
+                    initial release, off the cuff I tried the
+                    Forensics Evaluations Algorithm, and it was 
+                    reporting errors (this alorithm is ArcSin(
+                    ArcCos(ArcTan(Tan(Cos(Sin(9)))))), by the 
+                    way). Also applied a few minor tweaks to 
+                    the Help file.
+March 22, 2007 -- 0.2.2.
+                  * Added "Show Key Location" option to Search
+                    window, to show the user where select keys
+                    are located. Fixed/added a number of
+                    tweaks to the help file, including fixing
+                    a goof stating in a number of places that 
+                    text width was 64, not the correct 36 (64 
+                    had been in the original specs).
+                  * Renamed VisualCalc to VisualProCalc, due 
+                    to recent flood of various applications on 
+                    the Web also using the name "VisualCalc".
+                  * Fixed OP 36 to allow running module 
+                    programs to download other module programs 
+                    into the Pgm00 space.
+                  * Fixed sample Module 1 (MDL0001.mdl). 
+                    Though the Module construction code was 
+                    working OK, the sample module began
+                    construction before this code was fully 
+                    tested, and due to a repaired bug, it had 
+                    recorded some module program sizes as 
+                    being bigger than what they were, and so 
+                    more than one program was being loaded 
+                    into the instruction space.
+March 24, 2007 -- 0.2.3.
+                  * Added additional refinements to OP 36 
+                    function to ensure that when the invoking 
+                    program is a module program in the RUN 
+                    mode, and it is not downloading itself, 
+                    that the program will continue running in 
+                    the invoking program.
+                  * Add a new option and dialog to Help Menu: 
+                    Find all text matches. This dialog prompts 
+                    you for text, and then it will scan the
+                    entire help file for all matches. It will 
+                    generate a list of indexes, which you can 
+                    scroll through from the separate help 
+                    window, or from the menu. The separate 
+                    Help window also features Prev and Next 
+                    toolbar buttons, list a dropdown list 
+                    button, so you can select a position in 
+                    the range of matches.
+                  * 4 additional drawing modes were added to 
+                    the OP 75 command which is used by 
+                    plotting. New options 6 through 9 provided
+                    for: 6=Solid lines (default), 7=Dash
+                    lines, 8=Dash-Dot lines, and 9=Dash-Dot-
+                    Dot lines.
+                  * Updated Search dialog to store key names 
+                    in list when the user simply selects them 
+                    and then hits the "Show Keypad Location" 
+                    button.
+                  * Added Clear Recent List button to Find All 
+                    Text Matches dialog.
+                  * Fixed a bug that prevented the Plot Sbr 
+                    functions from working. Also removed 
+                    restriction that required the plot screen 
+                    to be visible to define the Plot Sbr. This 
+                    precaution was worked around by simply 
+                    preventing a trigger if the Plot Screen is 
+                    not visible.
+March 28, 2007 -- 0.2.4. Final Beta Release
+                  * Fixed Co-Display so that it would not blow 
+                    up if there were no instructions and the 
+                    user hit the backspace key.
+                  * Added OP 89, which provides 91 conversion 
+                    factors (0-90) for translating one unit of 
+                    measure to another.
+                  * Added OP 90 to compute Binomial 
+                    Coefficient: n! / (j!(n-j)!).
+                  * Added OP 91 to compute Atan2 function.
+                  * Added a long segment to the help file on 
+                    advanced Trig functions.
+                  * Gave 'Find all text matches' searches a 
+                    speed boost by not forcing the help file 
+                    reload if the next or previous or selected 
+                    text match index is found in the currently 
+                    loaded topic.
+                  * Added keyboard ["] as a shortcut for [TXT] 
+                    keypad command when in the Calculator Mode 
+                    and the Learn Mode, when text entry not 
+                    active.
+                  * Updated Search... to actually point to the
+                    target text if it is not a topic title.
+                    This emulates the functionality of the Find
+                    option, but it will only locate the first
+                    match.
+April 3, 2007 -- 1.0.0 Initial Release Version
+                  * Added a lot of additional comments to the
+                    code, corrected a capitalization error in
+                    a text message.
+                  * Fixed a Case Sense issue in variable name
+                    references, causing a false error report.
+                  * Fixed bug in the run-time variable indexing
+                    that caused an array index not to be found.
+                  * Gave display processing a significant speed
+                    boost.
+                  * Fixed Activate Previous Instance with a new
+                    replacement module that would restore a
+                    previous instance if it was minimized.

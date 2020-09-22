@@ -1,0 +1,5 @@
+'Sample Struct
+Struct "TEST" {
+  {Nvar "VAR1"}
+  {Tvar "VAR2"}
+  }

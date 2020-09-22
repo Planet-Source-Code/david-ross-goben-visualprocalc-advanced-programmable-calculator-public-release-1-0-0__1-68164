@@ -1,0 +1,64 @@
+'Block tests
+'----------------
+ 
+'Test If-Else
+Dfn Ukey "A" Lbl "Test If" {
+  If (Var 0 == 0) {
+    "Data is null"
+    }
+  Else {
+    RCL 0
+    }
+  }
+ 
+'Test Do-While
+Dfn Ukey "B" Lbl "Test DoW" {
+  CMs
+  Do {
+    Incr 0
+    } While (Var 0 < 10)
+  RCL 0
+  }
+ 
+'Test Do-Until
+Dfn Ukey "C" Lbl "Test DoU" {
+  CMs
+  Do {
+    Incr 0
+    } Until (Var 0 == 10)
+  RCL 0
+  }
+ 
+'Test While block
+Dfn Ukey "D" Lbl "Test While" {
+  CMs
+  While (Var 0 < 10) {
+    Incr 0
+    }
+  RCL 0
+  }
+ 
+'Test Do, with Cont & Break
+Dfn Ukey "E" Lbl "Test DO" {
+  CMs
+  10
+  X><T
+  Do {
+    Incr 0;
+    RCL 0 X!=T {
+      Cont
+      }
+    Break
+    }
+  RCL 0
+  }
+ 
+'Test For command
+Dfn Ukey "F" Lbl "Test For" {
+  For (0 STO 0, 5 STO 2; Var 0 < 5;
+  Incr 0) {
+    RCL 0 x RCL 2 =
+    Adv
+    }
+  RCL 0 - 1 =
+  }
