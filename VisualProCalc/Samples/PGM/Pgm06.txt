@@ -1,0 +1,40 @@
+'Plotting Demo
+'-------------
+Ukey "A" Lbl "Plot Demo" {
+  Plot Open
+  Plot CLR
+   
+  'Set draw color to red
+  RGB (255 , 0 , 0) OP 72
+   
+  'Draw a filled box
+  Line (0 , 0) - (300 , 360) , 2;
+   
+  'Set draw color to black
+  0 OP 72
+   
+  'Draw a box
+  Line (100 , 130) - (200 , 230) , 1
+   
+  'Draw a circle
+  Circle (150 , 180) , 50 , .01 , 360 , 1
+   
+  'Set draw color to white
+  RGB (255 , 255 , 255) OP 72
+   
+  'Flood fill with white
+  Plot (150 , 180) , 1 , 0;
+   
+  'Set draw color to black
+  0 OP 72
+   
+  'Say Hello at 45 degrees
+  Print (150 , 180 , 1) "Hello";
+   
+  'Draw tiny circle around center
+  Circle (150 , 180) , 2 , .01 , 360 , 1
+   
+  'Plot a point in the center
+  Plot (150 , 180);
+  0
+  }

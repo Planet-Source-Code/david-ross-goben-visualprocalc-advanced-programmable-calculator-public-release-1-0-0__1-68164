@@ -1,0 +1,10 @@
+'Test MID command
+Ukey "A" Lbl "Test MID" {
+  Tvar 0
+  "Lady Lake, FL" STO 0;
+  CLR;
+  RCL 0
+  Adv;
+  Mid (0 , 6 , 4);
+  STO 0
+  }

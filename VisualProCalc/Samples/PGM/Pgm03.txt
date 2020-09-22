@@ -1,0 +1,9 @@
+'Test Printf
+Ukey "A" Lbl "Test Printf" {
+  Push
+  Tvar 63
+  "#,##0.00;(#,##0.00);""Zero"""
+  STO 63
+  Pop
+  Printf 63
+  }

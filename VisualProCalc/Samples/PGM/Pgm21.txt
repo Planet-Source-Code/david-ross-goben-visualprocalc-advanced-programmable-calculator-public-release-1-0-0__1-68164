@@ -1,0 +1,11 @@
+'PMT test
+Dfn Ukey "A" Lbl "Test PMT" {
+  Tvar 0;
+  Tvar 1
+  CLR
+  Pmt "What is your name?" STO 0
+  CLR
+  "Hello " STO 1;
+  RCL 0 SUM 1;
+  RCL 1
+  }

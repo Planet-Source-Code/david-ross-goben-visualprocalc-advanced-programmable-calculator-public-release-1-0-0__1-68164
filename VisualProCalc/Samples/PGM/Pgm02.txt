@@ -1,0 +1,17 @@
+'Compute Channel Critical Depth
+Fix 2
+CP
+Pmt "Enter Flow, Qubic Ft/Sec" Val
+X><T
+Pmt "Enter channel width" Val
+X² x 32.2 = 1/X x X><T
+X² = Root 3 =
+Push
+"Critical Depth ="
+Adv
+Pop
+R/S
+Adv
+" "
+Adv
+Reset

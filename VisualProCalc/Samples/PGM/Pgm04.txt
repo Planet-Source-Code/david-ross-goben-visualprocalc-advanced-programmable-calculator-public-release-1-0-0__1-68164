@@ -1,0 +1,48 @@
+'Calculate Date for Easter
+Ukey "A" Lbl "Calc Easter" {
+  CMs
+  Tvar 8
+  Tvar 9
+  !Fix
+   
+  'Compute Lunar Month
+  12.44028
+  D.MS ÷ 24 + 29 = STO 1;
+  1/X STO 2;
+  "1/1/1600" Val STO 3;
+  "3/20/" STO 9
+   
+  CLR
+  Pmt "Enter Year to check (ie, 2007):"
+  Val STO 12
+  'Define Date of Spring Equinox
+  SUM 9
+   
+  'Computer percentage to full moon
+  RCL 9 Val;
+  (STO 13 - RCL 3) ÷ RCL 1 = Frac
+  STO 3
+   
+  'Compute Date of full Moon
+  While (Var 3 < 1) {
+    Incr Var 13;
+    RCL 2 SUM 3
+    }
+   
+  'Find Sunday
+  RCL 13 OP 55 STO 0
+  While (Var 0 != 1) {
+    Incr Var 13;
+    RCL 13 OP 55 STO 0
+    }
+   
+  "dddd, mmmm d" OP 48;
+  "For " STO 8;
+  RCL 12 SUM 8;
+  ", Easter falls on:" SUM 8;
+  RCL 8
+  Adv
+  RCL 13 OP 50
+  Adv
+  0
+  }
